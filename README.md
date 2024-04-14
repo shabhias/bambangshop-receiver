@@ -79,19 +79,32 @@ You can install Postman via this website: https://www.postman.com/downloads/
     -   [ ] Commit: `Implement list function in Notification controller.`
     -   [ ] Write answers of your learning module's "Reflection Subscriber-2" questions in this README.
 
-## Your Reflections
+# Your Reflections
 This is the place for you to write reflections:
 
-### Mandatory (Subscriber) Reflections
+## Mandatory (Subscriber) Reflections
 
-#### Reflection Subscriber-1
-1.  
+## Reflection Subscriber-1
+
+No.1
 - RwLock<Vec> sangat diperlukan untuk mengkoordinasikan penggunaan dengan struktur data, yaitu sebuah Vector yang berisi notifikasi di sepanjang thread. RwLock memungkinkan beberapa reader untuk mengakses data secara bersamaaan, sementara hanya ada satu reader yang bisa mengubahnya.
 - Hal tersebut berguna dalam multi-threading untuk menghindari persaingan data yang bisa terjadi secara acak dan memastikan bahwa informasi yang diakses selalu konsisten.
 - Memilih RwLock didasarkan pada strategi locking yang berbeda. RwLock memperbolehkan beberapa reader untuk read lock secara bersamaan untuk skenario apabila operasi read lebih sering tejadi daripada operasi write.
 - Tetapi mutex hanya dapat mengizinkan satu thread untuk memiliki akses eksklusif pada satu waktu yang bisa menghambat kinerja jika ada banyak operasi read yang terjadi secara bersamaan.
 
-2. Rust tidak mengizinkan perubahan pada nilai static variable karena bertentangan dengan prinsip-prinsip ownership dan borrowing yang mendasari keamanan memori. Hal ini terkait dengan konsep mutable aliasing, di mana Rust sangat memperhatikan keamanan memori dan mencegah kesalahan data dengan menerapkan aturan terkait referensi mutable dan status bersama yang dapat dimutasi.
+No.2
+- Rust tidak mengizinkan perubahan pada nilai static variable karena bertentangan dengan prinsip-prinsip ownership dan borrowing yang mendasari keamanan memori. Hal ini terkait dengan konsep mutable aliasing, di mana Rust sangat memperhatikan keamanan memori dan mencegah kesalahan data dengan menerapkan aturan terkait referensi mutable dan status bersama yang dapat dimutasi.
 
 
-#### Reflection Subscriber-2
+## Reflection Subscriber-2
+
+No.1
+- Penggunaan lazy_static memungkinkan inisialisasi efisien global variable dalam Rust, mengurangi overhead pada awal program. Konfigurasi aplikasi dari file .env memudahkan penyimpanan dan akses terpusat terhadap pengaturan seperti port, koneksi database, atau token API. Penanganan kesalahan dengan Result<T,E> memisahkan nilai sukses dan error untuk penanganan yang lebih terstruktur. Penggunaan Custom<Json> untuk respons error meningkatkan kejelasan dan kegunaan informasi kesalahan yang disampaikan kepada pengguna.
+
+No.2
+- Observer Pattern pada sistem notifikasi dapat menyederhanakan proses penambahan subscriber baru. Dengan menyimpan daftar observer, memungkinkan penambahan subscriber baru tanpa perlu mengubah struktur inti dari aplikasi. Observer Pattern memfasilitasi pengiriman notifikasi kepada semua subscriber yang terdaftar dengan cara yang lebih efisien.
+- Diperlukannya mekanisme penyimpanan data bersama yang dapat diakses oleh semua instance. Hal tersebut dapat menimbulkan tantangan dalam memastikan sinkronisasi dan konsistensi antar-instance aplikasi, tertuama dalam pertukaran informasi atau notifikasi.
+
+No.3
+- Fitur tersebut akan berguna untuk tugas kelompok saya nantinya. Dalam proyek kelompok, kemampuan untuk membuat tes yang komprehensif akan memastikan kinerja aplikasi kami. Selain itu, peningkatan dokumentasi di Postman akan memudahkan kolaborasi tim dalam pengembangan dan pengujian aplikasi.
+
