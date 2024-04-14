@@ -85,5 +85,13 @@ This is the place for you to write reflections:
 ### Mandatory (Subscriber) Reflections
 
 #### Reflection Subscriber-1
+1.  
+- RwLock<Vec> sangat diperlukan untuk mengkoordinasikan penggunaan dengan struktur data, yaitu sebuah Vector yang berisi notifikasi di sepanjang thread. RwLock memungkinkan beberapa reader untuk mengakses data secara bersamaaan, sementara hanya ada satu reader yang bisa mengubahnya.
+- Hal tersebut berguna dalam multi-threading untuk menghindari persaingan data yang bisa terjadi secara acak dan memastikan bahwa informasi yang diakses selalu konsisten.
+- Memilih RwLock didasarkan pada strategi locking yang berbeda. RwLock memperbolehkan beberapa reader untuk read lock secara bersamaan untuk skenario apabila operasi read lebih sering tejadi daripada operasi write.
+- Tetapi mutex hanya dapat mengizinkan satu thread untuk memiliki akses eksklusif pada satu waktu yang bisa menghambat kinerja jika ada banyak operasi read yang terjadi secara bersamaan.
+
+2. Rust tidak mengizinkan perubahan pada nilai static variable karena bertentangan dengan prinsip-prinsip ownership dan borrowing yang mendasari keamanan memori. Hal ini terkait dengan konsep mutable aliasing, di mana Rust sangat memperhatikan keamanan memori dan mencegah kesalahan data dengan menerapkan aturan terkait referensi mutable dan status bersama yang dapat dimutasi.
+
 
 #### Reflection Subscriber-2
